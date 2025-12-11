@@ -27,6 +27,8 @@ void funC(int a)
 // 작은 수 부터 정렬
 void BubbleSort(int(&Arr)[10], bool isAscending)
 {
+	// 배열을 하나 더 선언하는게 아닌
+	// 매개변수로 받은 배열을 이용하여 다시 만들어보기
 	int tmpA[10] = { };
 	int tmp = 0;
 	int tmpIndex = 0;
@@ -70,6 +72,44 @@ void BubbleSort(int(&Arr)[10], bool isAscending)
 	}
 }
 
+void Fix_BubbleSort(int(&arr)[], bool isAscending)
+{
+	for (int i = 0; i < 9; i++)
+	{
+		bool isSwap = false;
+
+		for (int j = 0; j < 9 - i; j++)
+		{
+			// 오름차순
+			// j번째 배열과 그 다음 순서의 배열을 비교해서
+			// j번째가 더 크다면 오름차순 정렬이 되지 않았으므로 값 교환
+			if (isAscending && arr[j] > arr[j + 1])
+			{
+				isSwap = true;
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+
+			// 내림차순
+			// j번째 배열과 그 다음 순서의 배열을 비교해서
+			// j번째가 더 작다면 내림차순 정렬이 되지 않았으므로 값 교환
+			if (!isAscending && arr[j] < arr[j + 1])
+			{
+				isSwap = true;
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+
+		if (!isSwap)
+		{
+			break;
+		}
+	}
+}
+
 int main()
 {
 	funC(1, 2);
@@ -81,8 +121,11 @@ int main()
 	int Arr[10];
 	for (int i = 0; i < 10; i++)
 		Arr[i] = rand()%100 + 1;
+	int Arr2[10];
+	for (int i = 0; i < 10; i++)
+		Arr2[i] = rand() % 100 + 1;
 	
-	std::cout << "Before Sort" << std::endl;
+	std::cout << std::endl << "Before Sort" << std::endl;
 	for (int i = 0; i < 10; i++)
 		std::cout << Arr[i] << " ";
 	BubbleSort(Arr, true);
@@ -90,7 +133,13 @@ int main()
 	for (int i = 0; i < 10; i++)
 		std::cout << Arr[i] << " ";
 
-
+	std::cout << std::endl << std::endl << "Before Fix_Sort" << std::endl;
+	for (int i = 0; i < 10; i++)
+		std::cout << Arr2[i] << " ";
+	Fix_BubbleSort(Arr2, false);
+	std::cout << std::endl << "After Fix_Sort" << std::endl;
+	for (int i = 0; i < 10; i++)
+		std::cout << Arr2[i] << " ";
 
 	return 0;
 }
