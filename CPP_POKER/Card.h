@@ -39,6 +39,10 @@ public:
 	void getCardShape(int shape);
 
 	// Player 손패의 값을 확인하여, 어떤 카드인지 판별하여, 출력하는 함수
-	void ShowCardInfo(int hands[]);
+	//void ShowCardInfo(int hands[]);
 
+	// ShowCardInfo를 전체 패를 보여주는 버전과 인덱스를 받아 해당 카드한개의 정보를 보여주는 버전으로 나누어 구현
+
+	void ShowHands(int hands[]);
+	void ShowCardInfo(int arrayNum, int selectHands[]);
 };
