@@ -1,9 +1,9 @@
-// CPP ¿¬»êÀÚ
+// CPP ì—°ì‚°ìž
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-// °¡µ¶¼ºÀ» À§ÇØ 16Áø¼ö·Î ºñÆ® »óÅÂ Ç¥Çö
+// ê°€ë…ì„±ì„ ìœ„í•´ 16ì§„ìˆ˜ë¡œ ë¹„íŠ¸ ìƒíƒœ í‘œí˜„
 #define BLEED 0x1
 #define STUN 0x2
 #define FROZEN 0x4
@@ -14,30 +14,30 @@
 
 int main()
 {
-	// bool ÀÚ·áÇü
-	// Âü°ú °ÅÁþÀ» ³ªÅ¸³»´Â ÀÚ·áÇü (1byte)
-	// bool º¯¼ö¿¡ 0°ú 1ÀÌ ¾Æ´Ñ ´Ù¸¥ ¼ýÀÚ¸¦ ´ëÀÔÇÏ°í,
-	// bool º¯¼ö¸¦ ´Ù¸¥ ÀÚ·áÇü¿¡ ´ëÀÔÇÒ¶§
-	// boolÀº ÇØ´ç ¼ýÀÚ°¡ ¾Æ´Ñ 1À» ÀúÀå
-	// ´Ù¸¥ ÀÚ·áÇü¿¡¼­´Â 1ÀÌ ÀúÀåµÊ
+	// bool ìžë£Œí˜•
+	// ì°¸ê³¼ ê±°ì§“ì„ ë‚˜íƒ€ë‚´ëŠ” ìžë£Œí˜• (1byte)
+	// bool ë³€ìˆ˜ì— 0ê³¼ 1ì´ ì•„ë‹Œ ë‹¤ë¥¸ ìˆ«ìžë¥¼ ëŒ€ìž…í•˜ê³ ,
+	// bool ë³€ìˆ˜ë¥¼ ë‹¤ë¥¸ ìžë£Œí˜•ì— ëŒ€ìž…í• ë•Œ
+	// boolì€ í•´ë‹¹ ìˆ«ìžê°€ ì•„ë‹Œ 1ì„ ì €ìž¥
+	// ë‹¤ë¥¸ ìžë£Œí˜•ì—ì„œëŠ” 1ì´ ì €ìž¥ë¨
 
-	// ºñÆ® ¿¬»êÀÚ
-	// &(°ö), |(ÇÕ), ^(XOR), ~(¹ÝÀü), <<(), >>()
+	// ë¹„íŠ¸ ì—°ì‚°ìž
+	// &(ê³±), |(í•©), ^(XOR), ~(ë°˜ì „), <<(), >>()
 
-	// Æ¯Á¤ ºñÆ®°ª Á¦°Å
+	// íŠ¹ì • ë¹„íŠ¸ê°’ ì œê±°
 	// (*)
 	// status &= ~COLD;
 	// status ^= COLD;
-	// ±â´ÉÀÇ Â÷ÀÌÁ¡ »ý°¢ÇÏ±â
+	// ê¸°ëŠ¥ì˜ ì°¨ì´ì  ìƒê°í•˜ê¸°
 
 	// [Lab_0]
-	// ºñÆ®¿¬»êÀÚ¸¦ È°¿ëÇÏ¿©, »óÅÂÀÌ»ó Ã¼Å©ÇÏ´Â ÇÁ·Î±×·¥
+	// ë¹„íŠ¸ì—°ì‚°ìžë¥¼ í™œìš©í•˜ì—¬, ìƒíƒœì´ìƒ ì²´í¬í•˜ëŠ” í”„ë¡œê·¸ëž¨
 	{
 		srand(time(NULL));
 		unsigned int player = 0;
 
-		// TODO: 2ÀÇ Á¦°ö ¼ö¸¦ ¹«ÀÛÀ§·Î »ý¼ºÇÏ¿©, Á¤ÀÇµÈ »óÅÂÀÌ»ó¿¡ µû¶ó
-		// ÇÃ·¹ÀÌ¾îÀÇ »óÅÂ¸¦ ³ªÅ¸³»´Â ±â´É ±¸Çö
+		// TODO: 2ì˜ ì œê³± ìˆ˜ë¥¼ ë¬´ìž‘ìœ„ë¡œ ìƒì„±í•˜ì—¬, ì •ì˜ëœ ìƒíƒœì´ìƒì— ë”°ë¼
+		// í”Œë ˆì´ì–´ì˜ ìƒíƒœë¥¼ ë‚˜íƒ€ë‚´ëŠ” ê¸°ëŠ¥ êµ¬í˜„
 		unsigned int status = rand() % 600 + 1;
 
 		player |= STUN;
@@ -52,7 +52,7 @@ int main()
 		else
 			printf("\n");
 
-		// TODO: »óÅÂ ÀÌ»óÀ» ÇØÁ¦ÇÏ´Â ±â´É ±¸Çö
+		// TODO: ìƒíƒœ ì´ìƒì„ í•´ì œí•˜ëŠ” ê¸°ëŠ¥ êµ¬í˜„
 
 	}
 

@@ -109,3 +109,6 @@ int main()
 
 	return 0;
 }
+
+// Ctrl + Space: 미완성된 항목의 예상 안내를 받을 수 있다.
+// Ctrl + Shift + Space: 함수 인자 입력 커서위치에서 누르면, 해당 함수의 정보를 볼 수 있다.
